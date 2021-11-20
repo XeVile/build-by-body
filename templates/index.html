@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BUILD BY BODY</title>
+</head>
+<body>
+<header>
+    <h1><a href="{% url 'index' %}">BUILD BY BODY</a></h1>
+</header>
+{% for post in latest_post_list %}
+<article>
+    <time>Published on {{ post.pub_date }}</time>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p style="width:50%; text-overflow: ellipses;">{{ post.post_body }}</p>
+</article>
+{% endfor %}
+</body>
+</html>
