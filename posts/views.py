@@ -1,13 +1,15 @@
 from django.shortcuts import render
+from django.utils import timezone
 from .models import Post
 
 # Create your views here.
 def index(request):
-    latest_post_list = Post.objects.order_by('-pub_date')[:5]
+    # Create a list to itterate over HTML
+    latest_post_list = Post.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
     context = {
         'latest_post_list': latest_post_list,
     }
-    return render(request, 'index.html',context)
+    return render(request, 'index.html', context)
 
 def expand(request, post_id):
     try:

@@ -1,4 +1,3 @@
-import datetime
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
@@ -15,11 +14,14 @@ class Post(models.Model):
 
     body = models.TextField(max_length=100000)
 
+    # For returning the query as a string
     def __str__(self):
         return self.title
 
-    def published(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+    # Save date and save
+    def publish(self):
+        self.pub_date = timezone.now()
+        self.save()
 
 class Music(models.Model):
     track_title = models.CharField(max_length=333)

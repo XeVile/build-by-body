@@ -13,7 +13,7 @@
 <article>
     <h2><a href="">{{ post.title }}</a></h2>
     <time>Published on {{ post.pub_date }}</time>
-    <p style="width:50%; text-overflow: ellipses;">{{ post.body }}</p>
+    <p style="width:50%; text-overflow: ellipses;">{{ post.body | linebreaksbr }}</p>
 </article>
 {% endfor %}
 </body>
