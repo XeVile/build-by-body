@@ -7,7 +7,7 @@ def index(request):
     context = {
         'latest_post_list': latest_post_list,
     }
-    return render(request, '_layouts/home.html',context)
+    return render(request, 'index.html',context)
 
 def expand(request, post_id):
     try:

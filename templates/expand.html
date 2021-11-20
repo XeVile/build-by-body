@@ -2,19 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BUILD BY BODY</title>
+    <title>{{ post.title }} - BBB</title>
 </head>
 <body>
 <header>
     <h1><a href="{% url 'index' %}">BUILD BY BODY</a></h1>
 </header>
-<br>
-{% for post in latest_post_list %}
 <article>
     <h2><a href="">{{ post.title }}</a></h2>
     <time>Published on {{ post.pub_date }}</time>
-    <p style="width:50%; text-overflow: ellipses;">{{ post.body }}</p>
+    <br>
+    <p>{{ post.body }}</p>
 </article>
-{% endfor %}
 </body>
 </html>

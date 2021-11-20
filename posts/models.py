@@ -13,7 +13,7 @@ class Post(models.Model):
     create_date = models.DateTimeField(default=timezone.now)
     pub_date = models.DateTimeField(blank=True, null=True)
 
-    post_body = models.TextField(max_length=100000)
+    body = models.TextField(max_length=100000)
 
     def __str__(self):
         return self.title
