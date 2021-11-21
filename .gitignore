@@ -3,3 +3,6 @@
 
 # Static folder
 /static/
+
+# Settings
+blogger/.env
